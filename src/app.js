@@ -14,24 +14,6 @@ import getVisibleExpenses from "./selectors/expenses"
 
 const store = configureStore()
 
-// 監視
-store.subscribe(() => {
-  const state = store.getState()
-  const visibleExpenses = getVisibleExpenses(state.expenses, state.filters)
-  // console.log("filter:",state.filters.text)
-  // console.log("watch:",visibleExpenses)
-});
-
-store.dispatch(addExpense({description:"Rent",amount:109500}))
-store.dispatch(addExpense({description:"Gas bill",amount:340,createdAt:1000}))
-store.dispatch(addExpense({description:"Water bill",amount:3000,createdAt:50}))
-// store.dispatch(sortByAmount())
-// store.dispatch(setTextFilter("Bill"))
-
-// setTimeout(() => {
-//   store.dispatch(setTextFilter("rent"))
-// }, 3000);
-
 const jsx = (
   <Provider store={store}>
     <AppRouter/>
