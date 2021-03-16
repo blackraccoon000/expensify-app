@@ -4,6 +4,9 @@ import { editExpense,removeExpense } from "../actions/expenses"
 import ExpenseForm from "./ExpenseForm"
 
 export class EditExpensePage extends React.Component {
+  constructor(props) {
+    super(props)
+  }
   onRemove= _ =>{
     this.props.removeExpense({id:this.props.expense.id})
     this.props.history.push("/")
@@ -28,7 +31,7 @@ export class EditExpensePage extends React.Component {
 }
 
 const mapStateToProps = (state,props) => ({
-  expenses: state.expenses.find(expense => expense.id === props.match.params.id)
+  expense: state.expenses.find(expense => expense.id === props.match.params.id)
 })
 
 const mapDispatchToProps = (dispatch,props) => ({

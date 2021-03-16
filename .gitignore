@@ -103,4 +103,11 @@ dist
 # TernJS port file
 .tern-port
 
+# VSCode files
 .DS_Store
+
+# webpack by create files
+public/bundle.js
+public/styles.css
+public/bundle.js.map
+public/styles.css.map

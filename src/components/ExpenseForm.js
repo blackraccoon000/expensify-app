@@ -41,9 +41,7 @@ export default class ExpenseForm extends React.Component {
   }
   onNoteChange = (e) => {
     const note = e.target.value
-    this.setState(()=>(
-      { note }
-    ))
+    this.setState(()=>({ note }))
   }
   onSubmit = (e) => {
     e.preventDefault()

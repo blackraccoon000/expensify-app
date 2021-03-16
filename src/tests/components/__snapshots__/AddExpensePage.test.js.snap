@@ -3,7 +3,7 @@
 exports[`経費精算追加のテストを実施する should render AddExpensePage correctly 1`] = `
 <div>
   <h1>
-    This is from my add expense component
+    This is from my add expense component !!
   </h1>
   <ExpenseForm
     onSubmit={[Function]}
