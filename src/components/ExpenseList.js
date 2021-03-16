@@ -20,7 +20,7 @@ const ExpenseList = (props) => {
 }
 
 const mapStateToProps = (state)=>{
-  console.log("state:",{...state})
+  // console.log("state:",{...state})
   return {
     expenses: selectExpenses(state.expenses,state.filters)
   }
