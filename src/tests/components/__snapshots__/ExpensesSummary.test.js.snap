@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ExpensesSummary 1`] = `
+<div>
+  <p>
+    Viewing 
+     
+    expenses
+     totalling 
+    $0.00
+  </p>
+</div>
+`;
+
+exports[`should render count 10 total 10000 ExpensesSummary 1`] = `
+<div>
+  <p>
+    Viewing 
+    10
+     
+    expenses
+     totalling 
+    $100.00
+  </p>
+</div>
+`;
+
+exports[`should render count 10 total 10000 ExpensesSummary 2`] = `
+<div>
+  <p>
+    Viewing 
+    3
+     
+    expenses
+     totalling 
+    $1,141.95
+  </p>
+</div>
+`;
