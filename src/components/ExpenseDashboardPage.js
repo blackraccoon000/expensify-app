@@ -7,9 +7,9 @@ const ExpenseDashboardPage = () => {
   return (
   <div>
     This is from my dashboard component
+    <ExpensesSummary />
     <ExpenseListFilters />
     <ExpenseList />
-    <ExpensesSummary />
   </div>
 )}
 

@@ -11,5 +11,5 @@ app.get("*",(req,res)=>{
 })
 
 app.listen(port, () => {
-  console.log(`Server port:${port} is up`)
+  console.log(`Project is running at http://localhost:8081/`)
 })
