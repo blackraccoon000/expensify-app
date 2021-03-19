@@ -4,13 +4,13 @@ import { AddExpensePage } from "../../components/AddExpensePage"
 import expenses from "../fixtures/expenses"
 
 describe("経費精算追加のテストを実施する",()=>{
-  let addExpense, history, wrapper
+  let startAddExpense, history, wrapper
 
   beforeEach(()=>{
-    addExpense = jest.fn()
+    startAddExpense = jest.fn()
     history = { push: jest.fn() }
     wrapper = shallow(<AddExpensePage
-      addExpense={addExpense}
+      startAddExpense={startAddExpense}
       history={history}
     />)
   })
@@ -22,6 +22,6 @@ describe("経費精算追加のテストを実施する",()=>{
   it("should handle onSubmit",()=>{
     wrapper.find("ExpenseForm").prop("onSubmit")(expenses[0])
     expect(history.push).toHaveBeenLastCalledWith("/")
-    expect(addExpense).toHaveBeenLastCalledWith(expenses[0])
+    expect(startAddExpense).toHaveBeenLastCalledWith(expenses[0])
   })
 })
