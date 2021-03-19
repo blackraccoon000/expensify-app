@@ -1,6 +1,9 @@
 import configureMockStore from "redux-mock-store"
 import thunk from "redux-thunk"
-import { addExpense, editExpense, removeExpense, startAddExpense, setExpenses, startSetExpenses } from "../../actions/expenses";
+import {
+  addExpense, editExpense, removeExpense,
+  startAddExpense, setExpenses, startSetExpenses,
+  startRemoveExpense } from "../../actions/expenses";
 import expenses from "../fixtures/expenses"
 import database from "../../firebase/firebase"
 
@@ -120,6 +123,59 @@ it("should fetch the expenses from firebase", (done) => {
       type: 'SET_EXPENSES',
       expenses
     })
+    done()
+  })
+})
+
+// it("should remove expenses from firebase", (done) => {
+//   database.ref("expenses").once("value")
+//   .then(snapshot=>{
+//     const beforeData = []
+//     snapshot.forEach(cs => {
+//       beforeData.push({
+//         id: cs.key,
+//         ...cs.val()
+//       })
+//     })
+//     return beforeData
+//   })
+//   .then(ref=>{
+//     const store = createMockStore({})
+//     store.dispatch(startRemoveExpense({id:ref[0].id})).then(()=>{
+//       const actions = store.getActions()
+//       expect(actions[0]).toEqual({
+//         type: 'REMOVE_EXPENSE',
+//         id: ref[0].id
+//       })
+
+//       database.ref("expenses").once("value")
+//       .then(snapshot=>{
+//         const afterData = []
+//         snapshot.forEach(cs => {
+//           afterData.push({
+//             id: cs.key,
+//             ...cs.val()
+//           })
+//         })
+//         expect(afterData).toEqual([ref[1],ref[2]])
+//         done()
+//       })
+//     })
+//   })
+// })
+
+it("should remove expense from firebase",(done)=>{
+  const store = createMockStore({})
+  const id = expenses[2].id
+  store.dispatch(startRemoveExpense({id})).then(()=>{
+    const actions = store.getActions()
+    expect(actions[0]).toEqual({
+      type:"REMOVE_EXPENSE",
+      id
+    })
+    return database.ref(`expenses/${id}`).once("value")
+  }).then(snapshot=>{
+    expect(snapshot.val()).toBeFalsy()
     done()
   })
 })

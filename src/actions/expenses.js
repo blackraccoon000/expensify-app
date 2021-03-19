@@ -60,4 +60,12 @@ const startSetExpenses = () => {
   }
 }
 
-export { addExpense, removeExpense, editExpense, startAddExpense, setExpenses, startSetExpenses }
+const startRemoveExpense = ({id=""}={}) => {
+  return dispatch => {
+    return database.ref(`expenses/${id}`).remove().then(()=>{
+      dispatch(removeExpense({id}))
+    })
+  }
+}
+
+export { addExpense, removeExpense, editExpense, startAddExpense, setExpenses, startSetExpenses, startRemoveExpense }
