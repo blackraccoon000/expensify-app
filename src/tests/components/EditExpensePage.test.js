@@ -4,14 +4,14 @@ import { EditExpensePage } from "../../components/EditExpensePage"
 import expenses from "../fixtures/expenses"
 
 describe("EditExpensePageのテストを実施する",()=>{
-  let editExpense, startRemoveExpense, history, wrapper
+  let startEditExpense, startRemoveExpense, history, wrapper
 
   beforeEach(()=>{
-    editExpense = jest.fn()
+    startEditExpense = jest.fn()
     startRemoveExpense = jest.fn()
     history = { push: jest.fn() }
     wrapper = shallow(<EditExpensePage
-      editExpense = {editExpense}
+      startEditExpense = {startEditExpense}
       startRemoveExpense = {startRemoveExpense}
       expense = { expenses[0] }
       history = {history}
@@ -21,14 +21,14 @@ describe("EditExpensePageのテストを実施する",()=>{
     expect(wrapper).toMatchSnapshot()
   })
 
-  it("should handle editExpense", () => {
+  it("should handle startEditExpense", () => {
     const updates = {
       note:"New Note value",
       description: "New Description value"
     }
     wrapper.find("ExpenseForm").prop("onSubmit")(updates)
     expect(history.push).toHaveBeenLastCalledWith("/")
-    expect(editExpense).toHaveBeenLastCalledWith(expenses[0].id,updates)
+    expect(startEditExpense).toHaveBeenLastCalledWith(expenses[0].id,updates)
   })
 
   it("should handle startRemoveExpense", () => {
