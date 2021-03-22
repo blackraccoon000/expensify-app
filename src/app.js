@@ -3,13 +3,14 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux"
 
 import "normalize.css/normalize.css"
-import "./styles/styles.scss"
 import 'react-dates/lib/css/_datepicker.css';
+import "./styles/styles.scss"
 import { firebase } from "./firebase/firebase"
 // import "./playground/promises"
 
 import AppRouter, { history } from "./routers/AppRouters"
 import configureStore from "./store/configureStore"
+import LoadingPage from "./components/LoadingPage"
 import { startSetExpenses } from "./actions/expenses";
 import { login, logout } from "./actions/auth";
 // import { setTextFilter,sortByAmount } from "./actions/filters";
@@ -23,19 +24,16 @@ const jsx = (
   </Provider>
 )
 
-const jsxTest = (
-  <p>Loading...</p>
-)
-ReactDOM.render(jsxTest, document.getElementById("app"))
+ReactDOM.render(<LoadingPage />, document.getElementById("app"))
 
 let hasRendered = false
+
 const renderApp = () => {
   if(!hasRendered) {
     ReactDOM.render(jsx, document.getElementById("app"))
     hasRendered = true
   }
 }
-
 
 firebase.auth().onAuthStateChanged((user)=>{
   if(user) {

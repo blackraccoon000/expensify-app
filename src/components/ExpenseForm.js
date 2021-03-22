@@ -59,15 +59,16 @@ export default class ExpenseForm extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h1>Add Expense</h1>
-        <form onSubmit={this.onSubmit}>
+        <form className="form" onSubmit={this.onSubmit}>
+          {this.state.error && <p className="form__error">{this.state.error}</p>}
           <input
+            className="text-input"
             type="text" autoFocus placeholder="Description"
             value={this.state.description}
             onChange={this.onDescriptionChange}
           />
           <input
+            className="text-input"
             type="text" placeholder="Amount"
             value={this.state.amount}
             onChange={this.onAmountChange}/>
@@ -80,40 +81,15 @@ export default class ExpenseForm extends React.Component {
             isOutsideRange={_=>false}
           />
           <textarea
+            className="textarea"
             placeholder="Add a note for your expense (option)"
             value={this.state.note}
             onChange={this.onNoteChange}
           ></textarea>
-          <button>Add Expense</button>
+          <div>
+            <button className="button">Save Expense</button>
+          </div>
         </form>
-        {this.state.error && <p>{this.state.error}</p>}
-      </div>
     )
   }
 }
-
-// const ExpenseForm = ({dispatch}) => (
-//   <div>
-//     <form
-//       onSubmit={e=>{
-//         e.preventDefault()
-//         dispatch(addExpense({
-//           description:e.target.elements[0].value,
-//           amount:e.target.elements[1].value
-//           }))
-//         console.log("created:",e.target.elements[0].value)
-//         e.target.elements[0].value = ""
-//         e.target.elements[1].value = ""
-//         }
-//       }
-//     >
-//       <label>Des:
-//         <input type="text" placeholder="Description" autoFocus name="Des"/>
-//         <input type="text" placeholder="Amount" autoFocus name="Amo"/>
-//       </label>
-//         <input type="submit" value="submit"/>
-//     </form>
-//   </div>
-// )
-
-// export default connect()(ExpenseForm)

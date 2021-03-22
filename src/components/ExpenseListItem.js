@@ -5,16 +5,13 @@ import numeral from "numeral"
 
 const ExpenseListItem = ({id,description,amount,createdAt}) => {
   return (
-  <div>
-    <Link to={`/edit/${id}`}>
-      <h3>Des:{description}</h3>
+    <Link className="list-item" to={`/edit/${id}`}>
+      <div>
+        <h3 className="list-item__title">{description}</h3>
+        <span className="list-item__subTitle">{moment(createdAt).format("YYYY[/]MM[/]DD , HH:mm:ss")}</span>
+      </div>
+      <h3 className=" list-item__data">{numeral(amount / 100).format("¥0,0.00")}</h3>
     </Link>
-    <p>
-      amount:{numeral(amount / 100).format("¥0,0.00")}
-      -
-      createdAt:{moment(createdAt).format("YYYY[/]MM[/]DD , HH:mm:ss")}
-    </p>
-  </div>
 )}
 
 // export default connect()(ExpenseListItem)

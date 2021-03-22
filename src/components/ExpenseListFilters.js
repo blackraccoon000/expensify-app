@@ -30,26 +30,36 @@ export class ExpenseListFilters extends React.Component {
   render() {
     const {filters} = this.props
     return (
-      <div>
-      <input type="text" value={filters.text}
-        onChange = { this.onSetTextFilter }
-      />
-      <select
-        value={filters.sortBy}
-        onChange={this.onSortChange}>
-        <option value="date">Date</option>
-        <option value="amount">Amount</option>
-      </select>
-      <DateRangePicker
-        startDate={filters.startDate}
-        endDate={filters.endDate}
-        onDatesChange={this.onDatesChange}
-        focusedInput={this.state.calendarFocused}
-        onFocusChange={this.onFocusChange}
-        numberOfMonths={1} // 1月ごと表示
-        isOutsideRange={()=>false} // 範囲外表示
-        showClearDates={true} //　☓ボタン
-      />
+    <div className="content-container">
+      <div className="input-group">
+        <div className="input-group__item">
+          <input className="text-input" type="text" value={filters.text}
+            onChange = { this.onSetTextFilter } placeholder="Search expenses"
+          />
+        </div>
+        <div className="input-group__item">
+          <select
+            className="select"
+            value={filters.sortBy}
+            onChange={this.onSortChange}>
+            <option value="date">Date</option>
+            <option value="amount">Amount</option>
+          </select>
+        </div>
+        <div className="input-group__item">
+          <DateRangePicker
+            startDate={filters.startDate}
+            endDate={filters.endDate}
+            onDatesChange={this.onDatesChange}
+            focusedInput={this.state.calendarFocused}
+            onFocusChange={this.onFocusChange}
+            numberOfMonths={1} // 1月ごと表示
+            isOutsideRange={()=>false} // 範囲外表示
+            showClearDates={true} //　☓ボタン
+          />
+        </div>
+
+      </div>
     </div>
     )
   }
