@@ -1,0 +1,21 @@
+.input-group {
+  display: flex;
+  flex-direction: column; //縦
+  margin-bottom: $m-size;
+
+  @media (min-width: $desktop-breakpoint) {
+    //最低720pxから
+    align-items: center;
+    flex-direction: row; //横
+    justify-content: center;
+    margin-bottom: $l-size;
+  }
+}
+
+.input-group__item {
+  margin-bottom: $s-size;
+
+  @media (min-width: $desktop-breakpoint) {
+    margin: 0 $s-size 0 0;
+  }
+}

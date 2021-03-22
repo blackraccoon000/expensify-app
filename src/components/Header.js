@@ -1,22 +1,27 @@
 import React from "react"
-import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { connect } from "react-redux"
 import { startLogout } from "../actions/auth"
 
 class Header extends React.Component {
   render() {
     return (
-      <header>
-        <h1>Expensify</h1>
-        <ol>
-          <li><NavLink activeClassName="is-active" to="/" exact>Login</NavLink></li>
-          <li><NavLink activeClassName="is-active" to="/Dashboard">Dashboard</NavLink></li>
-          <li><NavLink activeClassName="is-active" to="/create">Create Expense</NavLink></li>
-          <li><NavLink activeClassName="is-active" to="/help">Help</NavLink></li>
-          <li><NavLink activeClassName="is-active" to="/404">NotFound</NavLink></li>
-          <button onClick={this.props.startLogoutDispatcher}>Logout</button>
-        </ol>
-        <hr/>
+      <header className="header">
+        <div className="content-container">
+          <div className="header__content">
+            <Link className="header__title" to="/Dashboard">
+              <h1>Expensify</h1>
+            </Link>
+            {/* <ol>
+              <li><NavLink activeClassName="is-active" to="/" exact>Login</NavLink></li>
+              <li><NavLink activeClassName="is-active" to="/Dashboard">Dashboard</NavLink></li>
+              <li><NavLink activeClassName="is-active" to="/create">Create Expense</NavLink></li>
+              <li><NavLink activeClassName="is-active" to="/help">Help</NavLink></li>
+              <li><NavLink activeClassName="is-active" to="/404">NotFound</NavLink></li>
+            </ol> */}
+            <button className="button button--link" onClick={this.props.startLogoutDispatcher}>Logout</button>
+          </div>
+        </div>
       </header>
     )
   }
