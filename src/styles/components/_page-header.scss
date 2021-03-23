@@ -9,9 +9,26 @@
 }
 
 .page-header__title {
+  font-size: $font-size-xLarge;
   font-weight: 300;
   margin: 0;
   span {
     font-weight: 700; // bold
   }
+}
+
+.page-header__subTitle {
+  font-size: $font-size-large;
+  color: $grey;
+  font-weight: 300;
+  margin: 0;
+  span {
+    font-weight: 500;
+  }
+}
+
+.page-header__alert {
+  @extend .page-header__subTitle;
+  font-size: $font-size-xLarge;
+  color: red;
 }

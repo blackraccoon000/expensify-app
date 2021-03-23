@@ -7,7 +7,6 @@ import LoginPage from "./LoginPage"
 const ExpenseDashboardPage = () => {
   return (
   <div>
-    {/* This is from my dashboard component */}
     <ExpensesSummary />
     <ExpenseListFilters />
     <ExpenseList />

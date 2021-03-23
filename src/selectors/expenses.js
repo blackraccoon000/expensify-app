@@ -1,7 +1,14 @@
 import moment from "moment"
 
+// const filtersReducerDefaultState = {
+//   text:"",
+//   sortBy:"date",
+//   startDate:moment().startOf("month"),
+//   endDate:moment().endOf("month")
+// }
+
 // --> Ex: getVisibleExpenses(expenses,filters)
-const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
+const getVisibleExpenses = (expenses, { text = "", sortBy = "date", startDate = undefined, endDate = undefined} = {}) => {
   const filterExpenses = expenses.filter(expense => {
     // const startDateMatch = typeof startDate !== "number" || expense.createdAt >= startDate
     // const endDateMatch = typeof endDate !== "number" || expense.createdAt <= endDate

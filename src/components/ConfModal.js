@@ -30,8 +30,8 @@ export class ConfModal extends React.Component {
       >
         <h3 className="modal__title">Are you sure you want to delete it?</h3>
         <div className="modal-container">
-          <button className="button button--alert removeBtn" onClick={this.onRemoveOnHandleCloseModal}>Yes</button>
-          <button className="button button--secondary cancelBtn" onClick={this.handleCloseModal}>No</button>
+          <button className="button button--alert removeBtn" onClick={this.onRemoveOnHandleCloseModal}>Remove</button>
+          <button className="button button--secondary cancelBtn" onClick={this.handleCloseModal}>Cancel</button>
         </div>
       </Modal>
     )

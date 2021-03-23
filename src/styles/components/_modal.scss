@@ -22,7 +22,9 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 0 $l-size;
+  button {
+    margin: $s-size;
+  }
 }
 
 .ReactModalPortal > div {
