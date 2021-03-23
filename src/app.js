@@ -13,8 +13,6 @@ import configureStore from "./store/configureStore"
 import LoadingPage from "./components/LoadingPage"
 import { startSetExpenses } from "./actions/expenses";
 import { login, logout } from "./actions/auth";
-// import { setTextFilter,sortByAmount } from "./actions/filters";
-// import getVisibleExpenses from "./selectors/expenses"
 
 const store = configureStore()
 

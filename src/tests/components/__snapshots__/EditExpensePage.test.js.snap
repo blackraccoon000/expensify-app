@@ -37,5 +37,9 @@ exports[`EditExpensePageのテストを実施する should render EditExpensePag
       Remove Expense
     </button>
   </div>
+  <Connect(ConfModal)
+    historyPush={[Function]}
+    id="1"
+  />
 </div>
 `;
