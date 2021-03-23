@@ -1,7 +1,12 @@
 ## About this project
 
 This course is for 　[Udemy Course React-2nd-Edition](https://www.udemy.com/course/react-2nd-edition/)
-Upload Sample is [Expensify](http://expensify.playwell.site/) (Not SSL)
+
+Upload Sample is [Heroku Default Domain](https://rac-expensify.herokuapp.com/) (SSL)
+-> connectable to Facebook
+
+Upload Sample is [Heroku Custom Domain](http://expensify.playwell.site/) (Not SSL)
+-> No connectable Facebook
 
 ## Changed Part
 
