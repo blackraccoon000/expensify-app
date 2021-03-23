@@ -22,7 +22,7 @@ const startLogin = () => {
       if (error.code === 'auth/account-exists-with-different-credential') {
         const pendingCred = error.credential;
         const email = error.email;
-        console.log("CL pendingCred Google",pendingCred)
+        // console.log("CL pendingCred Google",pendingCred)
 
         auth.fetchSignInMethodsForEmail(email).then(methods => {
           switch (methods[0]) {
@@ -56,7 +56,7 @@ const twitterLogin = () => {
       if (error.code === 'auth/account-exists-with-different-credential') {
         const pendingCred = error.credential;
         const email = error.email;
-        console.log("CL pendingCred Twitter",pendingCred)
+        // console.log("CL pendingCred Twitter",pendingCred)
 
         auth.fetchSignInMethodsForEmail(email).then(methods => {
           switch (methods[0]) {
@@ -90,7 +90,7 @@ const facebookLogin = () => {
       if (error.code === 'auth/account-exists-with-different-credential') {
         const pendingCred = error.credential;
         const email = error.email;
-        console.log("CL pendingCred Facebook",pendingCred)
+        // console.log("CL pendingCred Facebook",pendingCred)
 
         auth.fetchSignInMethodsForEmail(email).then(methods => {
           switch (methods[0]) {

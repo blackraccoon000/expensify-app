@@ -1,13 +1,18 @@
-# Git Commands
+## About this project
 
-git init - Create a new git repo
-git status - View the changes to your project code
-git add - Add files to staging area
-git commit - Creates a new commit with files from staging area
-git log - View recent commits
+This course is for 　[Udemy Course React-2nd-Edition](https://www.udemy.com/course/react-2nd-edition/)
+Upload Sample is [Expensify](http://expensify.playwell.site/) (Not SSL)
 
-# yarn
+## Changed Part
 
-最初に package.json にかかれている module をインストールするには、
-`yarn`もしくは`yarn install`で可能。
-`yarn add ***`は`***`部分にパッケージ名が入る。
+### react-modal 2.2.2 -> 3.12.1
+
+Update when checking with Modal before deleting an expense item.
+An error occurred when transitioning pages before the Modal appeared.
+Now it is stable.
+
+### Firebase version 4.2.0 -> 8.3.1
+
+If the same email address is registered during SNS authentication, an error will occur.
+As a workaround, I used [auth.fetchSignInMethodsForEmail(email)](https://firebase.google.com/docs/auth/web/google-signin#handling-account-exists-with-different-credential-errors).
+This required an upgrade.
