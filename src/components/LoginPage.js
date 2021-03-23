@@ -1,16 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { startLogin } from "../actions/auth"
-
-// export const LoginPage = ({startLogin}) => {
-//   return (
-//     <div>
-//       <p>Welcome Login Page</p>
-//       <button onClick={startLogin}>Login</button>
-//     </div>
-//   )
-// }
-
+import { startLogin, twitterLogin } from "../actions/auth"
 class LoginPage extends React.Component {
   constructor(props){
     super(props)
@@ -21,8 +11,11 @@ class LoginPage extends React.Component {
         <div className="box-layout__box">
           <h1 className="box-layout__title">Expensify App</h1>
           <p>It's time to get your expenses under control.</p>
-          <button className="button" onClick={this.props.startLoginDispatcher}>
+          <button className="button button--login" onClick={this.props.startLoginDispatcher}>
             Login with Google
+          </button>
+          <button className="button button--login" onClick={this.props.twitterLoginDispatcher}>
+            Login with Twitter
           </button>
         </div>
       </div>
@@ -31,7 +24,8 @@ class LoginPage extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  startLoginDispatcher: () => dispatch(startLogin())
+  startLoginDispatcher: () => dispatch(startLogin()),
+  twitterLoginDispatcher: () => dispatch(twitterLogin())
 })
 
 export { LoginPage }
