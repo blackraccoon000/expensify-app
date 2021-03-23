@@ -4,8 +4,6 @@ import { Link } from "react-router-dom"
 import selectExpenses from "../selectors/expenses"
 import selectExpensesTotal from "../selectors/expenses-total.js"
 import numeral from "numeral"
-import expensesTotal from "../selectors/expenses-total.js"
-import expenses from "../tests/fixtures/expenses"
 
 class ExpensesSummary extends React.Component {
   constructor(props) {
