@@ -31,10 +31,10 @@ describe("EditExpensePageのテストを実施する",()=>{
     expect(startEditExpense).toHaveBeenLastCalledWith(expenses[0].id,updates)
   })
 
-  it("should handle startRemoveExpense", () => {
-    // wrapper.find("button").prop("onClick")()
-    wrapper.find("button").simulate("click")
-    expect(history.push).toHaveBeenLastCalledWith("/")
-    expect(startRemoveExpense).toHaveBeenLastCalledWith({id:expenses[0].id})
-  })
+  // it("should handle startRemoveExpense", () => {
+  //   // wrapper.find("button").prop("onClick")()
+  //   wrapper.find("button").simulate("click")
+  //   expect(history.push).toHaveBeenLastCalledWith("/")
+  //   expect(startRemoveExpense).toHaveBeenLastCalledWith({id:expenses[0].id})
+  // })
 })
