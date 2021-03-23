@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { startLogin, twitterLogin } from "../actions/auth"
+import { startLogin, twitterLogin, facebookLogin } from "../actions/auth"
 class LoginPage extends React.Component {
   constructor(props){
     super(props)
@@ -10,13 +10,18 @@ class LoginPage extends React.Component {
       <div className="box-layout">
         <div className="box-layout__box">
           <h1 className="box-layout__title">Expensify App</h1>
-          <p>It's time to get your expenses under control.</p>
-          <button className="button button--login" onClick={this.props.startLoginDispatcher}>
-            Login with Google
-          </button>
-          <button className="button button--login" onClick={this.props.twitterLoginDispatcher}>
-            Login with Twitter
-          </button>
+          <p className="box-layout__subTitle">It's time to get your expenses under control.</p>
+          <div className="box-layout__buttonArea">
+            <button className="google button button--login" onClick={this.props.startLoginDispatcher}>
+              <i className="fi-social-google-plus"></i> Google
+            </button>
+            <button className="twitter button button--login" onClick={this.props.twitterLoginDispatcher}>
+              <i className="fi-social-twitter"></i> Twitter
+            </button>
+            <button className="facebook button button--login" onClick={this.props.facebookLoginDispatcher}>
+              <i className="fi-social-facebook"></i> Facebook
+            </button>
+          </div>
         </div>
       </div>
     )
@@ -25,7 +30,8 @@ class LoginPage extends React.Component {
 
 const mapDispatchToProps = dispatch => ({
   startLoginDispatcher: () => dispatch(startLogin()),
-  twitterLoginDispatcher: () => dispatch(twitterLogin())
+  twitterLoginDispatcher: () => dispatch(twitterLogin()),
+  facebookLoginDispatcher: () => dispatch(facebookLogin())
 })
 
 export { LoginPage }

@@ -23,5 +23,14 @@
 }
 
 .button--login {
+  background: none;
+  border: 1px solid $azure-blue;
+  border-radius: 3rem;
+  color: $azure-blue;
+  font-size: $font-size-small;
   margin-bottom: $s-size;
+  width: 135px;
+  @media (min-width: $desktop-breakpoint) {
+    font-size: $font-size-medium;
+  }
 }
