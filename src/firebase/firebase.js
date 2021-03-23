@@ -1,5 +1,8 @@
-import * as firebase from "firebase"
-import expenses from "../tests/fixtures/expenses"
+// import * as firebase from "firebase"
+import firebase from 'firebase/app'
+import "firebase/auth";
+import "firebase/database";
+
 
 const config = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -14,10 +17,12 @@ const config = {
 firebase.initializeApp(config);
 
 const database = firebase.database()
+
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
 const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
+const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 
-export { firebase, googleAuthProvider, twitterAuthProvider, database as default }
+export { firebase, googleAuthProvider, twitterAuthProvider, facebookAuthProvider, database as default }
 
 // database.ref("expenses").on("child_removed",snapshot=>{
 //   console.log("removed:",snapshot.key,snapshot.val())

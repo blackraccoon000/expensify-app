@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { connect } from "react-redux"
 import { startLogout } from "../actions/auth"
+import NavMenu from "./NavMenu"
 
 class Header extends React.Component {
   render() {
@@ -12,6 +13,7 @@ class Header extends React.Component {
             <Link className="header__title" to="/Dashboard">
               <h1>Expensify</h1>
             </Link>
+            {/* <NavMenu/> */}
             {/* <ol>
               <li><NavLink activeClassName="is-active" to="/" exact>Login</NavLink></li>
               <li><NavLink activeClassName="is-active" to="/Dashboard">Dashboard</NavLink></li>

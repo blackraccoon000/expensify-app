@@ -12,15 +12,42 @@ exports[`should render LoginPage Component 1`] = `
     >
       Expensify App
     </h1>
-    <p>
+    <p
+      className="box-layout__subTitle"
+    >
       It's time to get your expenses under control.
     </p>
-    <button
-      className="button"
-      onClick={[Function]}
+    <div
+      className="box-layout__buttonArea"
     >
-      Login with Google
-    </button>
+      <button
+        className="google button button--login"
+        onClick={[Function]}
+      >
+        <i
+          className="fi-social-google-plus"
+        />
+         Google
+      </button>
+      <button
+        className="twitter button button--login"
+        onClick={[Function]}
+      >
+        <i
+          className="fi-social-twitter"
+        />
+         Twitter
+      </button>
+      <button
+        className="facebook button button--login"
+        onClick={[Function]}
+      >
+        <i
+          className="fi-social-facebook"
+        />
+         Facebook
+      </button>
+    </div>
   </div>
 </div>
 `;
